@@ -1,4 +1,4 @@
-# Add the home page to any website
+# Add the frontend QR Generator component to any website
 
 You can add the home page generator to any html page by following the steps below:
 
