@@ -49,3 +49,9 @@ Extract this folder and copy the default image
     mkdir -p assets/images
 
     cp -r /path/to/frontend-src/assets/images/default-qrcode-placeholder.png assets/images
+
+### Screenshot
+
+The result should look like the following
+
+![Screenshot](screenshot.png)
