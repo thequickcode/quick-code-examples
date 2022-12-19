@@ -15,7 +15,9 @@ Find the line which contains the keyword `bundle-` and then copy the script tag 
 
 Example
 
-    <script async src="https://youdomain.com/bundle-27ec71b2.js"></script>
+```javascript
+<script async src="https://youdomain.com/bundle-27ec71b2.js"></script>
+```
 
 Add this script tag to your website before closing the head tag.
 
