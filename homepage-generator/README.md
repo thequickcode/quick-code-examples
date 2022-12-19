@@ -23,20 +23,24 @@ Add this script tag to your website before closing the head tag.
 
 Create the following JavaScript object right before the above script tag.
 
-    <script>
-        const CONFIG = {
-            // Replace yourdomain.com with your actual domain
-            "config.app.url": "http://yourdomain.com",
-            "config.app.name": "Quick Code",
-            "config.frontend.slogan": "QR Code Generator"
-        };
-    </script>
+```html
+<script>
+  const CONFIG = {
+    // Replace yourdomain.com with your actual domain
+    "config.app.url": "http://yourdomain.com",
+    "config.app.name": "Quick Code",
+    "config.frontend.slogan": "QR Code Generator",
+  };
+</script>
+```
 
 ### Add the `qrcg-website-banner` tag to your html page.
 
 Add the following html custom element at any position you would like.
 
-    <qrcg-website-banner></qrcg-website-banner>
+```html
+<qrcg-website-banner></qrcg-website-banner>
+```
 
 ### Copy the default QR code image and place it next to your page.
 
@@ -44,11 +48,13 @@ When extracting the files you have downloaded after purchasing the script, you w
 
 Extract this folder and copy the default image
 
-    cd your-project-directory
+```bash
+cd your-project-directory
 
-    mkdir -p assets/images
+mkdir -p assets/images
 
-    cp -r /path/to/frontend-src/assets/images/default-qrcode-placeholder.png assets/images
+cp -r /path/to/frontend-src/assets/images/default-qrcode-placeholder.png assets/images
+```
 
 ### Screenshot
 
