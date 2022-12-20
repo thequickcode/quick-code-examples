@@ -8,7 +8,7 @@
     <!-- Replace yourdomain.com with your actual domain -->
     <script>
       const CONFIG = {
-        "config.app.url": "http://yourdomain.com", // your domain without a trailing slash
+        "config.app.url": "https://yourdomain.com", // your domain without a trailing slash
         "config.app.name": "Quick Code",
         "config.frontend.slogan": "QR Code Generator",
       };
@@ -50,8 +50,31 @@
       }
     </style>
 
+    <style class="qrcg-website-banner-custom-style">
+      .data-box {
+        box-shadow: none;
+        background-color: black;
+      }
+    </style>
+
+    <style class="qrcg-type-selector-custom-style">
+      button {
+        background-color: gray;
+        color: white;
+      }
+
+      button.active {
+        background-color: white;
+        color: black;
+      }
+
+      button:hover {
+        color: black;
+      }
+    </style>
+
     <!-- Replace yourdomain.com with your actual domain -->
-    <script async src="http://yourdomain.com/bundle-99d97645.js"></script>
+    <script async src="https://yourdomain.com/bundle-99d97645.js"></script>
   </head>
   <body>
     <qrcg-website-banner></qrcg-website-banner>
