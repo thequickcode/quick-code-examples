@@ -1,7 +1,6 @@
 /**
  * This demo shows how to authorize your requests,
- * and then how to create a QR code and then get
- * the short link of the QR code.
+ * and then how to create bulk QR codes
  */
 
 const BASE_URL = ""; // https://quickcode-instance.tld/api
@@ -9,6 +8,10 @@ const BASE_URL = ""; // https://quickcode-instance.tld/api
 const USER_EMAIL = "";
 
 const USER_PASSWORD = "";
+
+const DESTINATION_URL = ""; // The URL which should be opened after scanning the QR code.
+
+const NUMBER_OF_QRCODES = 100; // How many QR codes should be created ...
 
 async function post(url, data, token) {
   const headers = {
@@ -56,13 +59,14 @@ async function getToken() {
   return response.token;
 }
 
-async function createQRCode(token) {
+async function createDynamicUrlQRCode(destinationUrl, name, token) {
   return await post(
     "/qrcodes",
     {
       type: "url",
+      name,
       data: {
-        url: "https://google.com",
+        url: destinationUrl,
       },
       design: {},
     },
@@ -70,18 +74,20 @@ async function createQRCode(token) {
   );
 }
 
-async function getRedirect(qrcodeId, token) {
-  return await get("/qrcodes/" + qrcodeId + "/redirect", token);
-}
-
 async function main() {
   const token = await getToken();
 
-  const qrcode = await createQRCode(token);
+  for (let i = 0; i < NUMBER_OF_QRCODES; i++) {
+    await createDynamicUrlQRCode(
+      DESTINATION_URL,
+      `Bali Geckos Membership Card #${i + 1}`,
+      token
+    );
 
-  const redirect = await getRedirect(qrcode.id, token);
+    console.log(`Created QR code ${i + 1} out of ${NUMBER_OF_QRCODES}`);
+  }
 
-  alert(redirect.route);
+  alert(NUMBER_OF_QRCODES + " QR code created succesfully!");
 }
 
 main();
